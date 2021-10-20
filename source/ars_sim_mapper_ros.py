@@ -161,7 +161,7 @@ class ArsSimMapperRos:
     # Publishers
 
     # 
-    self.obstacles_detected_world_pub = rospy.Publisher('estim_map_world', MarkerArray, queue_size=1)
+    self.obstacles_detected_world_pub = rospy.Publisher('estim_map_world', MarkerArray, queue_size=1, latch=True)
 
 
 
