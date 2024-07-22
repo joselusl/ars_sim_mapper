@@ -80,6 +80,8 @@ class ArsSimMapperRos(Node):
   #########
 
   def __init__(self, node_name='ars_sim_mapper_node'):
+    # Init ROS
+    super().__init__(node_name)
 
     # Robot frame
     self.world_frame = 'world'
@@ -118,9 +120,6 @@ class ArsSimMapperRos(Node):
 
 
   def __init(self, node_name='ars_sim_mapper_node'):
-    
-    # Init ROS
-    super().__init__(node_name)
     
     # Package path
     try:
