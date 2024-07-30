@@ -124,9 +124,9 @@ class ArsSimMapperRos(Node):
     # Package path
     try:
       pkg_path = get_package_share_directory('ars_sim_mapper')
-      print(f"The path to the package is: {pkg_path}")
+      self.get_logger().info(f"The path to the package is: {pkg_path}")
     except ModuleNotFoundError:
-      print("Package not found")
+      self.get_logger().info("Package not found")
 
 
     #### READING PARAMETERS ###
@@ -270,7 +270,7 @@ class ArsSimMapperRos(Node):
             self.obstacles_detected_world_msg.markers.append(obst_i_world_msg)
 
         else:
-          print("Unknown obstacle type:"+obst_i_msg.type)
+          self.get_logger().info("Unknown obstacle type:"+obst_i_msg.type)
 
 
 
@@ -289,7 +289,7 @@ class ArsSimMapperRos(Node):
             self.obstacles_detected_world_msg.markers.append(obst_i_world_msg)
 
         else:
-          print("Unknown obstacle type!!")
+          self.get_logger().info("Unknown obstacle type!!")
 
 
     # Publish
