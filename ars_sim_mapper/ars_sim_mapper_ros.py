@@ -1,6 +1,8 @@
 import numpy as np
 from numpy import *
 
+import math
+
 import os
 
 import copy
@@ -210,12 +212,12 @@ class ArsSimMapperRos(Node):
     # Noises
     #
     posi_noise = np.zeros((3,), dtype=float)
-    posi_noise[0] = np.random.normal(loc = 0.0, scale = np.math.sqrt(self.cov_map_stat_pos['x']))
-    posi_noise[1] = np.random.normal(loc = 0.0, scale = np.math.sqrt(self.cov_map_stat_pos['y']))
-    posi_noise[2] = np.random.normal(loc = 0.0, scale = np.math.sqrt(self.cov_map_stat_pos['z']))
+    posi_noise[0] = np.random.normal(loc = 0.0, scale = math.sqrt(self.cov_map_stat_pos['x']))
+    posi_noise[1] = np.random.normal(loc = 0.0, scale = math.sqrt(self.cov_map_stat_pos['y']))
+    posi_noise[2] = np.random.normal(loc = 0.0, scale = math.sqrt(self.cov_map_stat_pos['z']))
     #
-    radius_noise = np.random.normal(loc = 0.0, scale = np.math.sqrt(self.cov_map_stat_siz['R']))
-    height_noise = np.random.normal(loc = 0.0, scale = np.math.sqrt(self.cov_map_stat_siz['h']))
+    radius_noise = np.random.normal(loc = 0.0, scale = math.sqrt(self.cov_map_stat_siz['R']))
+    height_noise = np.random.normal(loc = 0.0, scale = math.sqrt(self.cov_map_stat_siz['h']))
 
 
 
